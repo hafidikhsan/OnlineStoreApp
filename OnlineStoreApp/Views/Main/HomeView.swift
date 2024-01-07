@@ -16,6 +16,11 @@ struct HomeView: View {
     @State private var isAlertShow: Bool = false
     @State private var alertMessage: String = ""
     
+    let columns = [
+        GridItem(.adaptive(minimum: 170)),
+        GridItem(.adaptive(minimum: 170)),
+    ]
+    
     var body: some View {
         NavigationStack {
             ZStack(alignment: .bottomTrailing) {
@@ -74,8 +79,10 @@ struct HomeView: View {
                                 Spacer()
                             } else {
                                 ScrollView {
-                                    ForEach(productServices.productList!.data.items, id: \.id) { list in
-                                        Text(list.title)
+                                    LazyVGrid(columns: columns, spacing: 20) {
+                                        ForEach(productServices.productList!.data.items, id: \.id) { list in
+                                            ProductCard(image: list.image, name: list.title, variant: list.totalVariant, stock: list.totalStok, price: list.price)
+                                        }
                                     }
                                 }
                                 .refreshable {

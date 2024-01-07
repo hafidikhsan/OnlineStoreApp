@@ -29,6 +29,7 @@
 		A6E255A12B4AFB9100DC6CC2 /* CreateVariantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E255A02B4AFB9100DC6CC2 /* CreateVariantView.swift */; };
 		A6E6CE692B4B2FAD00E3D584 /* CreateVariantCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E6CE682B4B2FAD00E3D584 /* CreateVariantCard.swift */; };
 		A6E6CE6B2B4B454F00E3D584 /* CreateProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E6CE6A2B4B454F00E3D584 /* CreateProductModel.swift */; };
+		A6E6CE6D2B4B528B00E3D584 /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E6CE6C2B4B528B00E3D584 /* ProductCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		A6E255A02B4AFB9100DC6CC2 /* CreateVariantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVariantView.swift; sourceTree = "<group>"; };
 		A6E6CE682B4B2FAD00E3D584 /* CreateVariantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVariantCard.swift; sourceTree = "<group>"; };
 		A6E6CE6A2B4B454F00E3D584 /* CreateProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductModel.swift; sourceTree = "<group>"; };
+		A6E6CE6C2B4B528B00E3D584 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				A6E2558E2B4ABD6800DC6CC2 /* PasswordTextField.swift */,
 				A6E255982B4AE18200DC6CC2 /* SearchTextField.swift */,
 				A6E6CE682B4B2FAD00E3D584 /* CreateVariantCard.swift */,
+				A6E6CE6C2B4B528B00E3D584 /* ProductCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				A6E2556A2B4AB49D00DC6CC2 /* OnlineStoreAppApp.swift in Sources */,
 				A6E255912B4AC2F500DC6CC2 /* AuthServices.swift in Sources */,
 				A6E2559B2B4AE44000DC6CC2 /* ProductListModel.swift in Sources */,
+				A6E6CE6D2B4B528B00E3D584 /* ProductCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
