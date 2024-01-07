@@ -9,9 +9,22 @@ import SwiftUI
 
 @main
 struct OnlineStoreAppApp: App {
+    
+    @StateObject private var appRootManager = AppRootManager()
+    @StateObject private var authentification = AuthServices()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Group {
+                switch appRootManager.currentRoot {
+                case .welcome:
+                    WelcomeView()
+                        .environmentObject(authentification)
+                case .home:
+                    HomeView()
+                }
+            }
+            .environmentObject(appRootManager)
         }
     }
 }

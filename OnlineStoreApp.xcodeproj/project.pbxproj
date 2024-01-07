@@ -8,17 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		A6E2556A2B4AB49D00DC6CC2 /* OnlineStoreAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E255692B4AB49D00DC6CC2 /* OnlineStoreAppApp.swift */; };
-		A6E2556C2B4AB49D00DC6CC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E2556B2B4AB49D00DC6CC2 /* ContentView.swift */; };
 		A6E2556E2B4AB49F00DC6CC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6E2556D2B4AB49F00DC6CC2 /* Assets.xcassets */; };
 		A6E255712B4AB49F00DC6CC2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6E255702B4AB49F00DC6CC2 /* Preview Assets.xcassets */; };
+		A6E2557D2B4AB4FC00DC6CC2 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E2557C2B4AB4FC00DC6CC2 /* WelcomeView.swift */; };
+		A6E2557F2B4AB50700DC6CC2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E2557E2B4AB50700DC6CC2 /* HomeView.swift */; };
+		A6E255812B4AB52C00DC6CC2 /* AppRootManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E255802B4AB52C00DC6CC2 /* AppRootManager.swift */; };
+		A6E255842B4AB55E00DC6CC2 /* Enumerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E255832B4AB55E00DC6CC2 /* Enumerate.swift */; };
+		A6E255872B4AB7F200DC6CC2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E255862B4AB7F200DC6CC2 /* LoginView.swift */; };
+		A6E255892B4AB80400DC6CC2 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E255882B4AB80400DC6CC2 /* RegistrationView.swift */; };
+		A6E2558B2B4ABCC100DC6CC2 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E2558A2B4ABCC100DC6CC2 /* Validators.swift */; };
+		A6E2558D2B4ABD5A00DC6CC2 /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E2558C2B4ABD5A00DC6CC2 /* EmailTextField.swift */; };
+		A6E2558F2B4ABD6800DC6CC2 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E2558E2B4ABD6800DC6CC2 /* PasswordTextField.swift */; };
+		A6E255912B4AC2F500DC6CC2 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E255902B4AC2F500DC6CC2 /* AuthServices.swift */; };
+		A6E255932B4AC37000DC6CC2 /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E255922B4AC37000DC6CC2 /* RegistrationModel.swift */; };
+		A6E255952B4AD79C00DC6CC2 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E255942B4AD79C00DC6CC2 /* LoginModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A6E255662B4AB49D00DC6CC2 /* OnlineStoreApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineStoreApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6E255692B4AB49D00DC6CC2 /* OnlineStoreAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineStoreAppApp.swift; sourceTree = "<group>"; };
-		A6E2556B2B4AB49D00DC6CC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A6E2556D2B4AB49F00DC6CC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6E255702B4AB49F00DC6CC2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A6E2557C2B4AB4FC00DC6CC2 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		A6E2557E2B4AB50700DC6CC2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A6E255802B4AB52C00DC6CC2 /* AppRootManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootManager.swift; sourceTree = "<group>"; };
+		A6E255832B4AB55E00DC6CC2 /* Enumerate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerate.swift; sourceTree = "<group>"; };
+		A6E255852B4AB6FA00DC6CC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A6E255862B4AB7F200DC6CC2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A6E255882B4AB80400DC6CC2 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		A6E2558A2B4ABCC100DC6CC2 /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		A6E2558C2B4ABD5A00DC6CC2 /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
+		A6E2558E2B4ABD6800DC6CC2 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
+		A6E255902B4AC2F500DC6CC2 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
+		A6E255922B4AC37000DC6CC2 /* RegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationModel.swift; sourceTree = "<group>"; };
+		A6E255942B4AD79C00DC6CC2 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +74,12 @@
 		A6E255682B4AB49D00DC6CC2 /* OnlineStoreApp */ = {
 			isa = PBXGroup;
 			children = (
+				A6E255852B4AB6FA00DC6CC2 /* Info.plist */,
+				A6E255822B4AB54000DC6CC2 /* Others */,
+				A6E255792B4AB4D300DC6CC2 /* Models */,
+				A6E255782B4AB4B700DC6CC2 /* Controllers */,
+				A6E255772B4AB4B000DC6CC2 /* Views */,
 				A6E255692B4AB49D00DC6CC2 /* OnlineStoreAppApp.swift */,
-				A6E2556B2B4AB49D00DC6CC2 /* ContentView.swift */,
 				A6E2556D2B4AB49F00DC6CC2 /* Assets.xcassets */,
 				A6E2556F2B4AB49F00DC6CC2 /* Preview Content */,
 			);
@@ -65,6 +92,62 @@
 				A6E255702B4AB49F00DC6CC2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A6E255772B4AB4B000DC6CC2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A6E2557B2B4AB4E000DC6CC2 /* Components */,
+				A6E2557A2B4AB4DB00DC6CC2 /* Main */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A6E255782B4AB4B700DC6CC2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A6E255802B4AB52C00DC6CC2 /* AppRootManager.swift */,
+				A6E255902B4AC2F500DC6CC2 /* AuthServices.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A6E255792B4AB4D300DC6CC2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A6E255922B4AC37000DC6CC2 /* RegistrationModel.swift */,
+				A6E255942B4AD79C00DC6CC2 /* LoginModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A6E2557A2B4AB4DB00DC6CC2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A6E2557C2B4AB4FC00DC6CC2 /* WelcomeView.swift */,
+				A6E2557E2B4AB50700DC6CC2 /* HomeView.swift */,
+				A6E255862B4AB7F200DC6CC2 /* LoginView.swift */,
+				A6E255882B4AB80400DC6CC2 /* RegistrationView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A6E2557B2B4AB4E000DC6CC2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A6E2558C2B4ABD5A00DC6CC2 /* EmailTextField.swift */,
+				A6E2558E2B4ABD6800DC6CC2 /* PasswordTextField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A6E255822B4AB54000DC6CC2 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				A6E255832B4AB55E00DC6CC2 /* Enumerate.swift */,
+				A6E2558A2B4ABCC100DC6CC2 /* Validators.swift */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +220,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6E2556C2B4AB49D00DC6CC2 /* ContentView.swift in Sources */,
+				A6E2558F2B4ABD6800DC6CC2 /* PasswordTextField.swift in Sources */,
+				A6E255872B4AB7F200DC6CC2 /* LoginView.swift in Sources */,
+				A6E255932B4AC37000DC6CC2 /* RegistrationModel.swift in Sources */,
+				A6E255812B4AB52C00DC6CC2 /* AppRootManager.swift in Sources */,
+				A6E2557F2B4AB50700DC6CC2 /* HomeView.swift in Sources */,
+				A6E255892B4AB80400DC6CC2 /* RegistrationView.swift in Sources */,
+				A6E2558B2B4ABCC100DC6CC2 /* Validators.swift in Sources */,
+				A6E2558D2B4ABD5A00DC6CC2 /* EmailTextField.swift in Sources */,
+				A6E255952B4AD79C00DC6CC2 /* LoginModel.swift in Sources */,
+				A6E2557D2B4AB4FC00DC6CC2 /* WelcomeView.swift in Sources */,
+				A6E255842B4AB55E00DC6CC2 /* Enumerate.swift in Sources */,
 				A6E2556A2B4AB49D00DC6CC2 /* OnlineStoreAppApp.swift in Sources */,
+				A6E255912B4AC2F500DC6CC2 /* AuthServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +364,7 @@
 				DEVELOPMENT_TEAM = 4UU695S6PP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = OnlineStoreApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -299,7 +393,7 @@
 				DEVELOPMENT_TEAM = 4UU695S6PP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = OnlineStoreApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
