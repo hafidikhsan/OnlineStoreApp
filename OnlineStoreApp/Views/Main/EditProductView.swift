@@ -80,7 +80,9 @@ struct EditProductView: View {
                             .fontWeight(.bold)
                         
                         ForEach(product.variants, id: \.id) { list in
-                            EditVariantCard(name: list.name, price: list.price, stock: list.stock, image: list.image)
+                            NavigationLink(destination: EditVariantView(variantParam: list)) {
+                                EditVariantCard(name: list.name, price: list.price, stock: list.stock, image: list.image)
+                            }.buttonStyle(PlainButtonStyle())
                         }
                     }.padding(.top, 10)
                 }.padding()

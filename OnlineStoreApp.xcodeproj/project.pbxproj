@@ -32,6 +32,7 @@
 		A6E6CE6D2B4B528B00E3D584 /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E6CE6C2B4B528B00E3D584 /* ProductCard.swift */; };
 		A6E6CE6F2B4B5B1500E3D584 /* EditProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E6CE6E2B4B5B1500E3D584 /* EditProductView.swift */; };
 		A6E6CE712B4B5F0900E3D584 /* EditVariantCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E6CE702B4B5F0900E3D584 /* EditVariantCard.swift */; };
+		A6E6CE732B4B684500E3D584 /* EditVariantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E6CE722B4B684500E3D584 /* EditVariantView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		A6E6CE6C2B4B528B00E3D584 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
 		A6E6CE6E2B4B5B1500E3D584 /* EditProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProductView.swift; sourceTree = "<group>"; };
 		A6E6CE702B4B5F0900E3D584 /* EditVariantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVariantCard.swift; sourceTree = "<group>"; };
+		A6E6CE722B4B684500E3D584 /* EditVariantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVariantView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				A6E2559E2B4AF06800DC6CC2 /* CreateProductView.swift */,
 				A6E255A02B4AFB9100DC6CC2 /* CreateVariantView.swift */,
 				A6E6CE6E2B4B5B1500E3D584 /* EditProductView.swift */,
+				A6E6CE722B4B684500E3D584 /* EditVariantView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				A6E2556A2B4AB49D00DC6CC2 /* OnlineStoreAppApp.swift in Sources */,
 				A6E255912B4AC2F500DC6CC2 /* AuthServices.swift in Sources */,
 				A6E2559B2B4AE44000DC6CC2 /* ProductListModel.swift in Sources */,
+				A6E6CE732B4B684500E3D584 /* EditVariantView.swift in Sources */,
 				A6E6CE6D2B4B528B00E3D584 /* ProductCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
