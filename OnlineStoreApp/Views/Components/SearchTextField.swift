@@ -9,6 +9,9 @@ import SwiftUI
 
 struct SearchTextField: View {
     
+    @EnvironmentObject private var appRootManager: AppRootManager
+    @EnvironmentObject private var productServices: ProductServices
+    
     @Binding var text: String
     
     var body: some View {
@@ -17,7 +20,7 @@ struct SearchTextField: View {
             
             TextField("Search", text: $text)
                 .onSubmit {
-                    // Search
+                    productServices.fetchingProductList(token: appRootManager.currentToken, search: text)
                 }
                 .submitLabel(.search)
         }
@@ -31,6 +34,6 @@ struct SearchTextField: View {
 
 struct SearchTextField_Previews: PreviewProvider {
     static var previews: some View {
-        SearchTextField(text: .constant(""))
+        SearchTextField(text: .constant("")).environmentObject(AppRootManager()).environmentObject(ProductServices())
     }
 }

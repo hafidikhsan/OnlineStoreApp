@@ -55,7 +55,9 @@ class ProductServices: ObservableObject {
                     if productListResponse.code == "20000" {
                         self.productList = productListResponse
                         self.status = .success
+                        print("Fetch successful - Code: \(productListResponse.code), Message: \(productListResponse.message)")
                     } else {
+                        print("Fetch failed - Code: \(productListResponse.code), Message: \(productListResponse.message)")
                         self.status = .error("Status \(productListResponse.code): \(productListResponse.message)")
                     }
                 } catch {
