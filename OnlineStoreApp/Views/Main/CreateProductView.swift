@@ -65,14 +65,16 @@ struct CreateProductView: View {
                         // For Each CreateVariant
                         
                         Button {} label: {
-                            Text("Add Variant Product")
-                                .frame(maxWidth: .infinity)
-                                .padding(.vertical, 20)
-                                .background(.white)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 4)
-                                        .stroke(.blue, lineWidth: 1)
-                                )
+                            NavigationLink(destination: CreateVariantView()) {
+                                Text("Add Variant Product")
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 20)
+                                    .background(.white)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 4)
+                                            .stroke(.blue, lineWidth: 1)
+                                    )
+                            }
                         }
                         .padding(.bottom, 10)
                     }.padding(.top, 10)

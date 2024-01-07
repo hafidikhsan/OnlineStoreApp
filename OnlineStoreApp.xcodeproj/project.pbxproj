@@ -26,6 +26,7 @@
 		A6E255992B4AE18200DC6CC2 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E255982B4AE18200DC6CC2 /* SearchTextField.swift */; };
 		A6E2559B2B4AE44000DC6CC2 /* ProductListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E2559A2B4AE44000DC6CC2 /* ProductListModel.swift */; };
 		A6E2559F2B4AF06800DC6CC2 /* CreateProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E2559E2B4AF06800DC6CC2 /* CreateProductView.swift */; };
+		A6E255A12B4AFB9100DC6CC2 /* CreateVariantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E255A02B4AFB9100DC6CC2 /* CreateVariantView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		A6E255982B4AE18200DC6CC2 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		A6E2559A2B4AE44000DC6CC2 /* ProductListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListModel.swift; sourceTree = "<group>"; };
 		A6E2559E2B4AF06800DC6CC2 /* CreateProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductView.swift; sourceTree = "<group>"; };
+		A6E255A02B4AFB9100DC6CC2 /* CreateVariantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVariantView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				A6E255862B4AB7F200DC6CC2 /* LoginView.swift */,
 				A6E255882B4AB80400DC6CC2 /* RegistrationView.swift */,
 				A6E2559E2B4AF06800DC6CC2 /* CreateProductView.swift */,
+				A6E255A02B4AFB9100DC6CC2 /* CreateVariantView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				A6E255952B4AD79C00DC6CC2 /* LoginModel.swift in Sources */,
 				A6E2557D2B4AB4FC00DC6CC2 /* WelcomeView.swift in Sources */,
 				A6E255842B4AB55E00DC6CC2 /* Enumerate.swift in Sources */,
+				A6E255A12B4AFB9100DC6CC2 /* CreateVariantView.swift in Sources */,
 				A6E2556A2B4AB49D00DC6CC2 /* OnlineStoreAppApp.swift in Sources */,
 				A6E255912B4AC2F500DC6CC2 /* AuthServices.swift in Sources */,
 				A6E2559B2B4AE44000DC6CC2 /* ProductListModel.swift in Sources */,
