@@ -77,7 +77,7 @@ class ProductServices: ObservableObject {
         task.resume()
     }
     
-    func createProduct(form: ProductForm, token: String, completion: @escaping (Result<Registration?, Error>) -> Void) {
+    func createProduct(form: ProductForm, token: String, completion: @escaping (Result<CreateResponse?, Error>) -> Void) {
         self.status = .fetching
         
         guard let url = URL(string: self.baseURL) else {
@@ -112,11 +112,12 @@ class ProductServices: ObservableObject {
 
                 do {
                     let decoder = JSONDecoder()
-                    let uploadProductResponse = try decoder.decode(Registration.self, from: data)
+                    let uploadProductResponse = try decoder.decode(CreateResponse.self, from: data)
 
                     if uploadProductResponse.code == "20000" {
                         self.status = .success
                         print("Upload successful - Code: \(uploadProductResponse.code), Message: \(uploadProductResponse.message)")
+                        completion(.success(uploadProductResponse))
                     } else {
                         print("Upload failed - Code: \(uploadProductResponse.code), Message: \(uploadProductResponse.message)")
                         self.status = .error("Status \(uploadProductResponse.code): \(uploadProductResponse.message)")

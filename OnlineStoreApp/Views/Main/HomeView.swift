@@ -78,6 +78,9 @@ struct HomeView: View {
                                         Text(list.title)
                                     }
                                 }
+                                .refreshable {
+                                    productServices.fetchingProductList(token: appRootManager.currentToken, search: searchProductName)
+                                }
                             }
                         }
                     }

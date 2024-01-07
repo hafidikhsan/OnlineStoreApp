@@ -104,8 +104,8 @@ struct CreateProductView: View {
                             switch result {
                             case .success(_):
                                 isSuccess = true
-                                isAlertShow.toggle()
                                 alertMessage = "Upload successful"
+                                isAlertShow.toggle()
                             case .failure(let error):
                                 isAlertShow.toggle()
                                 alertMessage = error.localizedDescription
@@ -136,12 +136,15 @@ struct CreateProductView: View {
                 }
                 .padding(.bottom, 10)
             }
-            .alert("Create Product Failed", isPresented: $isAlertShow) {
-                Button(isSuccess ? "Ok" : "Try Again") {
-                    alertMessage = ""
-                    
-                    if isSuccess {
+            .alert(isSuccess ? "Successful" : "Create Product Failed", isPresented: $isAlertShow) {
+                if isSuccess {
+                    Button("Ok") {
+                        alertMessage = ""
                         dismiss()
+                    }
+                } else {
+                    Button("Try Again") {
+                        alertMessage = ""
                     }
                 }
             } message: {
