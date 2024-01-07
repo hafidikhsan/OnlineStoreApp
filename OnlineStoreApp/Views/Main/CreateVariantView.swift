@@ -67,7 +67,6 @@ struct CreateVariantView: View {
                         }
                         .onChange(of: selectedItem) { newItem in
                             Task {
-                                // Retrieve selected asset in the form of Data
                                 if let data = try? await newItem?.loadTransferable(type: Data.self) {
                                     selectedImageData = data
                                 }
@@ -85,6 +84,7 @@ struct CreateVariantView: View {
                                     .stroke(Color.gray, lineWidth: 1)
                             )
                     }
+                    
                     VStack(alignment: .leading) {
                         Text("Harga")
                             .font(.title3)
@@ -103,6 +103,7 @@ struct CreateVariantView: View {
                                 .stroke(Color.gray, lineWidth: 1)
                         )
                     }
+                    
                     VStack(alignment: .leading) {
                         Text("Stok")
                             .font(.title3)
@@ -142,9 +143,24 @@ struct CreateVariantView: View {
                 }.padding()
                 
                 Button {
-                    // Check Value
+                    let isNameValid = productServices.createVariantName.count > 0 && productServices.createVariantName.count <= 100
                     
-                    // Append to publish [CreateVariant]
+                    if let image = selectedImageData {
+                        productServices.createVariantImage = "data:image/jpeg;base64," + image.base64EncodedString()
+                        
+                        if isNameValid && productServices.createVariantImage != "" {
+                            productServices.createProductVariants.append(CreateVariant(image: productServices.createVariantImage, imageData: image, name: productServices.createVariantName, price: productServices.createVariantPrice, stock: productServices.createVariantStock))
+                            
+                            dismiss ()
+                        } else {
+                            isAlertShow.toggle()
+                            alertMessage = "Error Create Variant"
+                        }
+                        
+                    } else {
+                        isAlertShow.toggle()
+                        alertMessage = "Error Encode Image"
+                    }
                 } label: {
                     Text("Add")
                         .frame(maxWidth: .infinity)
@@ -153,6 +169,11 @@ struct CreateVariantView: View {
                         .foregroundColor(.white)
                 }
                 .padding(.bottom, 10)
+            }
+            .alert("Create Variant Failed", isPresented: $isAlertShow) {
+                Button("Try Again") { }
+            } message: {
+                Text(alertMessage)
             }
             .navigationBarBackButtonHidden()
         }

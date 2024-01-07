@@ -69,12 +69,84 @@ class ProductServices: ObservableObject {
                         self.status = .error("Status \(productListResponse.code): \(productListResponse.message)")
                     }
                 } catch {
-                    print(data)
                     self.status = .error(error.localizedDescription)
                 }
             }
         }
         
         task.resume()
+    }
+    
+    func createProduct(form: ProductForm, token: String, completion: @escaping (Result<Registration?, Error>) -> Void) {
+        self.status = .fetching
+        
+        guard let url = URL(string: self.baseURL) else {
+            self.status = .error("Invalid URL")
+            completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid API URL"])))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        do {
+            let encoder = JSONEncoder()
+            let jsonData = try encoder.encode(form)
+            request.httpBody = jsonData
+        } catch {
+            completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Error Decode JSON"])))
+            self.status = .error("Error Decode JSON")
+            return
+        }
+        
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(token, forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async {
+                guard let data = data, error == nil else {
+                    completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data received"])))
+                    self.status = .error("No data received")
+                    return
+                }
+
+                do {
+                    let decoder = JSONDecoder()
+                    let uploadProductResponse = try decoder.decode(Registration.self, from: data)
+
+                    if uploadProductResponse.code == "20000" {
+                        self.status = .success
+                        print("Upload successful - Code: \(uploadProductResponse.code), Message: \(uploadProductResponse.message)")
+                    } else {
+                        print("Upload failed - Code: \(uploadProductResponse.code), Message: \(uploadProductResponse.message)")
+                        self.status = .error("Status \(uploadProductResponse.code): \(uploadProductResponse.message)")
+                        completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Status \(uploadProductResponse.code): \(uploadProductResponse.message)"])))
+                    }
+                } catch {
+                    completion(.failure(error))
+                    self.status = .error(error.localizedDescription)
+                }
+            }
+        }
+
+        task.resume()
+    }
+    
+    func clearCreateForm() {
+        self.status = .initialized
+        self.createProductName = ""
+        self.createProductDesc = ""
+        self.createVariantImage = ""
+        self.createVariantName = ""
+        self.createProductVariants = []
+        self.createVariantStock = 0
+        self.createVariantPrice = 0
+    }
+    
+    func clearCreateVariantForm() {
+        self.createVariantImage = ""
+        self.createVariantName = ""
+        self.createVariantStock = 0
+        self.createVariantPrice = 0
     }
 }

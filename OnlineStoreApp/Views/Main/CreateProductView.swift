@@ -9,11 +9,15 @@ import SwiftUI
 
 struct CreateProductView: View {
     
+    @EnvironmentObject private var appRootManager: AppRootManager
     @EnvironmentObject private var productServices: ProductServices
     @Environment(\.dismiss) private var dismiss
     
     @State private var isAlertShow: Bool = false
+    @State private var isSuccess: Bool = false
     @State private var alertMessage: String = ""
+    
+    @State private var variantPOST: [VariantForm] = []
     
     var body: some View {
         NavigationStack {
@@ -62,9 +66,13 @@ struct CreateProductView: View {
                             .font(.title3)
                             .fontWeight(.bold)
                         
-                        // For Each CreateVariant
+                        ForEach(productServices.createProductVariants, id: \.self) { list in
+                            CreateVariantCard(name: list.name, price: list.price, stock: list.stock, image: list.imageData)
+                        }
                         
-                        Button {} label: {
+                        Button {
+                            productServices.clearCreateVariantForm()
+                        } label: {
                             NavigationLink(destination: CreateVariantView()) {
                                 Text("Add Variant Product")
                                     .frame(maxWidth: .infinity)
@@ -83,20 +91,37 @@ struct CreateProductView: View {
                 Button {
                     let isNameValid = productServices.createProductName.count > 0 && productServices.createProductName.count <= 200
                     let isDescValid = productServices.createProductDesc.count > 0 && productServices.createProductDesc.count <= 500
-                    // Check list
+                    let isVariantValid = productServices.createProductVariants.count > 0
                     
-                    if isNameValid && isDescValid {
-                        print(productServices.createProductName, productServices.createProductDesc)
-                        alertMessage = ""
+                    if isNameValid && isDescValid && isVariantValid {
+                        for i in productServices.createProductVariants {
+                            variantPOST.append(VariantForm(name: i.name, image: i.image, price: i.price, stock: i.stock))
+                        }
+                        
+                        let formPOST = ProductForm(title: productServices.createProductName, description: productServices.createProductDesc, variants: variantPOST)
+                        
+                        productServices.createProduct(form: formPOST, token: appRootManager.currentToken) { result in
+                            switch result {
+                            case .success(_):
+                                isSuccess = true
+                                isAlertShow.toggle()
+                                alertMessage = "Upload successful"
+                            case .failure(let error):
+                                isAlertShow.toggle()
+                                alertMessage = error.localizedDescription
+                            }
+                        }
                     } else {
                         alertMessage += "Product "
                         
-                        if !isNameValid && !isDescValid {
-                            alertMessage += "Name and Description "
+                        if !isNameValid && !isDescValid && !isVariantValid {
+                            alertMessage += "Name, Description, Variant "
                         } else if !isNameValid {
                             alertMessage += "Name "
-                        } else {
+                        } else if !isDescValid {
                             alertMessage += "Description "
+                        } else {
+                            alertMessage += "Variant "
                         }
                         
                         alertMessage += "Invalid!"
@@ -112,8 +137,12 @@ struct CreateProductView: View {
                 .padding(.bottom, 10)
             }
             .alert("Create Product Failed", isPresented: $isAlertShow) {
-                Button("Try Again") {
+                Button(isSuccess ? "Ok" : "Try Again") {
                     alertMessage = ""
+                    
+                    if isSuccess {
+                        dismiss()
+                    }
                 }
             } message: {
                 Text(alertMessage)
@@ -125,6 +154,6 @@ struct CreateProductView: View {
 
 struct CreateProductView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateProductView().environmentObject(ProductServices())
+        CreateProductView().environmentObject(ProductServices()).environmentObject(AppRootManager())
     }
 }

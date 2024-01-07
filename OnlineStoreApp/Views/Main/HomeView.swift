@@ -27,7 +27,9 @@ struct HomeView: View {
                         
                         Spacer()
                         
-                        Button(action: {}) {
+                        Button(action: {
+                            productServices.clearCreateForm()
+                        }) {
                             NavigationLink(destination: CreateProductView()) {
                                 Image("AddProductIcon").resizable().frame(width: 40,height: 40)
                             }
@@ -71,8 +73,10 @@ struct HomeView: View {
                                     .foregroundColor(Color.blue)
                                 Spacer()
                             } else {
-                                ForEach(productServices.productList!.data.items, id: \.id) { list in
-                                    Text(list.title)
+                                ScrollView {
+                                    ForEach(productServices.productList!.data.items, id: \.id) { list in
+                                        Text(list.title)
+                                    }
                                 }
                             }
                         }

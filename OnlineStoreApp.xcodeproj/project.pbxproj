@@ -27,6 +27,8 @@
 		A6E2559B2B4AE44000DC6CC2 /* ProductListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E2559A2B4AE44000DC6CC2 /* ProductListModel.swift */; };
 		A6E2559F2B4AF06800DC6CC2 /* CreateProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E2559E2B4AF06800DC6CC2 /* CreateProductView.swift */; };
 		A6E255A12B4AFB9100DC6CC2 /* CreateVariantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E255A02B4AFB9100DC6CC2 /* CreateVariantView.swift */; };
+		A6E6CE692B4B2FAD00E3D584 /* CreateVariantCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E6CE682B4B2FAD00E3D584 /* CreateVariantCard.swift */; };
+		A6E6CE6B2B4B454F00E3D584 /* CreateProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E6CE6A2B4B454F00E3D584 /* CreateProductModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		A6E2559A2B4AE44000DC6CC2 /* ProductListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListModel.swift; sourceTree = "<group>"; };
 		A6E2559E2B4AF06800DC6CC2 /* CreateProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductView.swift; sourceTree = "<group>"; };
 		A6E255A02B4AFB9100DC6CC2 /* CreateVariantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVariantView.swift; sourceTree = "<group>"; };
+		A6E6CE682B4B2FAD00E3D584 /* CreateVariantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVariantCard.swift; sourceTree = "<group>"; };
+		A6E6CE6A2B4B454F00E3D584 /* CreateProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,7 @@
 				A6E255922B4AC37000DC6CC2 /* RegistrationModel.swift */,
 				A6E255942B4AD79C00DC6CC2 /* LoginModel.swift */,
 				A6E2559A2B4AE44000DC6CC2 /* ProductListModel.swift */,
+				A6E6CE6A2B4B454F00E3D584 /* CreateProductModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 				A6E2558C2B4ABD5A00DC6CC2 /* EmailTextField.swift */,
 				A6E2558E2B4ABD6800DC6CC2 /* PasswordTextField.swift */,
 				A6E255982B4AE18200DC6CC2 /* SearchTextField.swift */,
+				A6E6CE682B4B2FAD00E3D584 /* CreateVariantCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6E2558F2B4ABD6800DC6CC2 /* PasswordTextField.swift in Sources */,
+				A6E6CE6B2B4B454F00E3D584 /* CreateProductModel.swift in Sources */,
 				A6E255872B4AB7F200DC6CC2 /* LoginView.swift in Sources */,
 				A6E255932B4AC37000DC6CC2 /* RegistrationModel.swift in Sources */,
 				A6E2559F2B4AF06800DC6CC2 /* CreateProductView.swift in Sources */,
@@ -249,6 +256,7 @@
 				A6E255952B4AD79C00DC6CC2 /* LoginModel.swift in Sources */,
 				A6E2557D2B4AB4FC00DC6CC2 /* WelcomeView.swift in Sources */,
 				A6E255842B4AB55E00DC6CC2 /* Enumerate.swift in Sources */,
+				A6E6CE692B4B2FAD00E3D584 /* CreateVariantCard.swift in Sources */,
 				A6E255A12B4AFB9100DC6CC2 /* CreateVariantView.swift in Sources */,
 				A6E2556A2B4AB49D00DC6CC2 /* OnlineStoreAppApp.swift in Sources */,
 				A6E255912B4AC2F500DC6CC2 /* AuthServices.swift in Sources */,
