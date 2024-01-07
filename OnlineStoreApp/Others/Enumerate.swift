@@ -16,3 +16,10 @@ enum welcomViewStack {
     case login
     case regist
 }
+
+enum fetchingAPIStatus {
+    case initialized
+    case fetching
+    case success
+    case error(_ message: String)
+}

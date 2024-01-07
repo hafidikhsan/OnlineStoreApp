@@ -10,7 +10,9 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject private var appRootManager: AppRootManager
+    @EnvironmentObject private var productServices: ProductServices
     
+    @State private var searchProductName: String = ""
     @State private var isAlertShow: Bool = false
     @State private var alertMessage: String = ""
     
@@ -29,9 +31,50 @@ struct HomeView: View {
                             Image("AddProductIcon").resizable().frame(width: 40,height: 40)
                         }
                     }
-                    Spacer()
-                    Text(appRootManager.currentToken)
-                    Spacer()
+                    
+                    SearchTextField(text: $searchProductName)
+                    
+                    switch productServices.status {
+                    case .initialized:
+                        VStack {
+                            Spacer()
+                            ProgressView()
+                                .task {
+                                    productServices.fetchingProductList(token: appRootManager.currentToken, search: searchProductName)
+                                }
+                            Spacer()
+                        }
+                    case .fetching:
+                        VStack {
+                            Spacer()
+                            ProgressView()
+                            Spacer()
+                        }
+                    case .error(let error):
+                        VStack {
+                            Spacer()
+                            Text(error)
+                            Spacer()
+                        }
+                    case .success:
+                        VStack {
+                            if productServices.productList!.data.items.count == 0 {
+                                Spacer()
+                                Image("EmptyIcon")
+                                    .resizable()
+                                    .frame(width: 100, height: 100)
+                                Text("Add Product")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.blue)
+                                Spacer()
+                            } else {
+                                ForEach(productServices.productList!.data.items, id: \.id) { list in
+                                    Text(list.title)
+                                }
+                            }
+                        }
+                    }
                 }
                 .padding()
                 
@@ -63,6 +106,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView().environmentObject(AppRootManager())
+        HomeView().environmentObject(AppRootManager()).environmentObject(ProductServices())
     }
 }

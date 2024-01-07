@@ -12,6 +12,7 @@ struct OnlineStoreAppApp: App {
     
     @StateObject private var appRootManager = AppRootManager()
     @StateObject private var authentification = AuthServices()
+    @StateObject private var productServices = ProductServices()
     
     var body: some Scene {
         WindowGroup {
@@ -22,6 +23,7 @@ struct OnlineStoreAppApp: App {
                         .environmentObject(authentification)
                 case .home:
                     HomeView()
+                        .environmentObject(productServices)
                 }
             }
             .environmentObject(appRootManager)
