@@ -25,6 +25,7 @@
 		A6E255972B4AE12800DC6CC2 /* ProductServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E255962B4AE12800DC6CC2 /* ProductServices.swift */; };
 		A6E255992B4AE18200DC6CC2 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E255982B4AE18200DC6CC2 /* SearchTextField.swift */; };
 		A6E2559B2B4AE44000DC6CC2 /* ProductListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E2559A2B4AE44000DC6CC2 /* ProductListModel.swift */; };
+		A6E2559F2B4AF06800DC6CC2 /* CreateProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E2559E2B4AF06800DC6CC2 /* CreateProductView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		A6E255962B4AE12800DC6CC2 /* ProductServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductServices.swift; sourceTree = "<group>"; };
 		A6E255982B4AE18200DC6CC2 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		A6E2559A2B4AE44000DC6CC2 /* ProductListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListModel.swift; sourceTree = "<group>"; };
+		A6E2559E2B4AF06800DC6CC2 /* CreateProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				A6E2557E2B4AB50700DC6CC2 /* HomeView.swift */,
 				A6E255862B4AB7F200DC6CC2 /* LoginView.swift */,
 				A6E255882B4AB80400DC6CC2 /* RegistrationView.swift */,
+				A6E2559E2B4AF06800DC6CC2 /* CreateProductView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				A6E2558F2B4ABD6800DC6CC2 /* PasswordTextField.swift in Sources */,
 				A6E255872B4AB7F200DC6CC2 /* LoginView.swift in Sources */,
 				A6E255932B4AC37000DC6CC2 /* RegistrationModel.swift in Sources */,
+				A6E2559F2B4AF06800DC6CC2 /* CreateProductView.swift in Sources */,
 				A6E255972B4AE12800DC6CC2 /* ProductServices.swift in Sources */,
 				A6E255812B4AB52C00DC6CC2 /* AppRootManager.swift in Sources */,
 				A6E255992B4AE18200DC6CC2 /* SearchTextField.swift in Sources */,

@@ -49,3 +49,9 @@ struct Variant: Codable {
     let name: String
     let price, stock: Int
 }
+
+struct CreateVariant: Codable {
+    let image: String
+    let name: String
+    let price, stock: Int
+}

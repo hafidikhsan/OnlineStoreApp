@@ -28,7 +28,9 @@ struct HomeView: View {
                         Spacer()
                         
                         Button(action: {}) {
-                            Image("AddProductIcon").resizable().frame(width: 40,height: 40)
+                            NavigationLink(destination: CreateProductView()) {
+                                Image("AddProductIcon").resizable().frame(width: 40,height: 40)
+                            }
                         }
                     }
                     

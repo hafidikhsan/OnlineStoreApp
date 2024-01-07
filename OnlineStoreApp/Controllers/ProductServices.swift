@@ -14,6 +14,14 @@ class ProductServices: ObservableObject {
     @Published var status: fetchingAPIStatus = .initialized
     @Published var productList: ProductList?
     
+    @Published var createProductName = ""
+    @Published var createProductDesc = ""
+    @Published var createProductVariants: [CreateVariant] = []
+    @Published var createVariantName = ""
+    @Published var createVariantImage = ""
+    @Published var createVariantPrice = 0
+    @Published var createVariantStock = 0
+    
     func fetchingProductList(token: String, search: String) {
         self.status = .fetching
         
