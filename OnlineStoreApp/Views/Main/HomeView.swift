@@ -81,7 +81,9 @@ struct HomeView: View {
                                 ScrollView {
                                     LazyVGrid(columns: columns, spacing: 20) {
                                         ForEach(productServices.productList!.data.items, id: \.id) { list in
-                                            ProductCard(image: list.image, name: list.title, variant: list.totalVariant, stock: list.totalStok, price: list.price)
+                                            NavigationLink(destination: EditProductView(productParam: list)) {
+                                                ProductCard(image: list.image, name: list.title, variant: list.totalVariant, stock: list.totalStok, price: list.price)
+                                            }.buttonStyle(PlainButtonStyle())
                                         }
                                     }
                                 }

@@ -29,11 +29,11 @@ struct DataItems: Codable {
 }
 
 struct Item: Codable {
-    let id: Int
-    let title, description: String
-    let totalVariant, totalStok, price: Int
-    let image: String
-    let variants: [Variant]
+    var id: Int
+    var title, description: String
+    var totalVariant, totalStok, price: Int
+    var image: String
+    var variants: [Variant]
 
     enum CodingKeys: String, CodingKey {
         case id, title, description
@@ -44,8 +44,8 @@ struct Item: Codable {
 }
 
 struct Variant: Codable {
-    let id: Int
-    let image: String
-    let name: String
-    let price, stock: Int
+    var id: Int
+    var image: String
+    var name: String
+    var price, stock: Int
 }

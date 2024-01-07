@@ -133,6 +133,67 @@ class ProductServices: ObservableObject {
         task.resume()
     }
     
+    func updateProduct(token: String, id: Int, title: String, desc: String, completion: @escaping (Result<CreateResponse?, Error>) -> Void) {
+        self.status = .fetching
+        
+        let updateURL = self.baseURL + "/update-product/" + String(id)
+        
+        guard let url = URL(string: updateURL) else {
+            self.status = .error("Invalid URL")
+            completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid API URL"])))
+            return
+        }
+        
+        let parameters = [
+            "title": title,
+            "description": desc,
+        ]
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+        } catch {
+            completion(.failure(error))
+            self.status = .error(error.localizedDescription)
+            return
+        }
+        
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(token, forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async {
+                guard let data = data, error == nil else {
+                    completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data received"])))
+                    self.status = .error("No data received")
+                    return
+                }
+
+                do {
+                    let decoder = JSONDecoder()
+                    let uploadProductResponse = try decoder.decode(CreateResponse.self, from: data)
+
+                    if uploadProductResponse.code == "20000" {
+                        self.status = .success
+                        print("Upload successful - Code: \(uploadProductResponse.code), Message: \(uploadProductResponse.message)")
+                        completion(.success(uploadProductResponse))
+                    } else {
+                        print("Upload failed - Code: \(uploadProductResponse.code), Message: \(uploadProductResponse.message)")
+                        self.status = .error("Status \(uploadProductResponse.code): \(uploadProductResponse.message)")
+                        completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Status \(uploadProductResponse.code): \(uploadProductResponse.message)"])))
+                    }
+                } catch {
+                    completion(.failure(error))
+                    self.status = .error(error.localizedDescription)
+                }
+            }
+        }
+
+        task.resume()
+    }
+    
     func clearCreateForm() {
         self.status = .initialized
         self.createProductName = ""
