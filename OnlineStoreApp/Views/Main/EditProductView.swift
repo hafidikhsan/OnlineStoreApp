@@ -17,6 +17,8 @@ struct EditProductView: View {
     
     @State var product: Item
     @State private var isAlertShow: Bool = false
+    @State private var isAlertDeleteShow: Bool = false
+    @State private var isDeleteSuccess: Bool = false
     @State private var isSuccess: Bool = false
     @State private var alertMessage: String = ""
     
@@ -42,7 +44,18 @@ struct EditProductView: View {
                     Spacer()
                     
                     Button {
-                        // Delete function
+                        productServices.deleteProduct(token: appRootManager.currentToken, id: product.id) { result in
+                            switch result {
+                            case .success(_):
+                                isDeleteSuccess = true
+                                alertMessage = "Delete successful"
+                                isAlertDeleteShow.toggle()
+                            case .failure(let error):
+                                alertMessage = error.localizedDescription
+                                isAlertDeleteShow.toggle()
+                            }
+                        }
+                        
                     } label: {
                         Image("DeleteIcon").resizable().frame(width: 40,height: 40)
                     }
@@ -130,6 +143,20 @@ struct EditProductView: View {
             }
             .alert(isSuccess ? "Successful" : "Update Product Failed", isPresented: $isAlertShow) {
                 if isSuccess {
+                    Button("Ok") {
+                        alertMessage = ""
+                        dismiss()
+                    }
+                } else {
+                    Button("Try Again") {
+                        alertMessage = ""
+                    }
+                }
+            } message: {
+                Text(alertMessage)
+            }
+            .alert(isDeleteSuccess ? "Delete Successful" : "Delete Product Failed", isPresented: $isAlertDeleteShow) {
+                if isDeleteSuccess {
                     Button("Ok") {
                         alertMessage = ""
                         dismiss()
