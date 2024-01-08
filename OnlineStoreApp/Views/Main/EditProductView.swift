@@ -19,6 +19,7 @@ struct EditProductView: View {
     @State private var isAlertShow: Bool = false
     @State private var isAlertDeleteShow: Bool = false
     @State private var isDeleteSuccess: Bool = false
+    @State private var isDelete: Bool = false
     @State private var isSuccess: Bool = false
     @State private var alertMessage: String = ""
     
@@ -44,18 +45,7 @@ struct EditProductView: View {
                     Spacer()
                     
                     Button {
-                        productServices.deleteProduct(token: appRootManager.currentToken, id: product.id) { result in
-                            switch result {
-                            case .success(_):
-                                isDeleteSuccess = true
-                                alertMessage = "Delete successful"
-                                isAlertDeleteShow.toggle()
-                            case .failure(let error):
-                                alertMessage = error.localizedDescription
-                                isAlertDeleteShow.toggle()
-                            }
-                        }
-                        
+                        isDelete = true
                     } label: {
                         Image("DeleteIcon").resizable().frame(width: 40,height: 40)
                     }
@@ -154,6 +144,26 @@ struct EditProductView: View {
                 }
             } message: {
                 Text(alertMessage)
+            }
+            .alert(isPresented:$isDelete) {
+                Alert(
+                    title: Text("Delete Product"),
+                    message: Text("Are you sure to Delete \"\(product.title)\" ?"),
+                    primaryButton: .destructive(Text("Yes")) {
+                        productServices.deleteProduct(token: appRootManager.currentToken, id: product.id) { result in
+                            switch result {
+                            case .success(_):
+                                isDeleteSuccess = true
+                                alertMessage = "Delete successful"
+                                isAlertDeleteShow.toggle()
+                            case .failure(let error):
+                                alertMessage = error.localizedDescription
+                                isAlertDeleteShow.toggle()
+                            }
+                        }
+                    },
+                    secondaryButton: .cancel()
+                )
             }
             .alert(isDeleteSuccess ? "Delete Successful" : "Delete Product Failed", isPresented: $isAlertDeleteShow) {
                 if isDeleteSuccess {
